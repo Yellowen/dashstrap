@@ -1,5 +1,5 @@
 module Dashstrap
-  class Engine < ::Rails::Engine
+  class TemplateEngine < ::Rails::Engine
 
   end
 end
