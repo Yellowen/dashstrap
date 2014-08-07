@@ -1,0 +1,27 @@
+<header class="header" ng-include="'<%= @jstemplates_path %>/nav.html'">
+</header>
+<div class="wrapper row-offcanvas row-offcanvas-left">
+<aside class="left-side sidebar-offcanvas" ng-include="'<%= @jstemplates_path %>/modules.html'">
+</aside>
+
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <span translate>Dashboard</span>
+      <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Dashboard</li>
+    </ol>
+  </section>
+
+  <!-- Main content -->
+  <section class="content" ng-view>
+  </section><!-- /.content -->
+
+</aside><!-- /.right-side -->
+
+</div>
