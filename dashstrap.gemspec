@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{An awesome dashboard template for Faalis platform.}
   spec.description   = %q{An awesome dashboard template for Faalis platform.}
   spec.homepage      = 'https://github.com/Yellowen/dashstrap'
-  spec.license       = "GPLv2"
+  spec.license       = 'GPLv2'
 
   spec.files         = `git ls-files -z`.split("\x0")
   #spec.require_paths = ['lib', 'vendor/**/*']
@@ -21,4 +21,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'less-rails'
   spec.add_dependency 'railties', '~>4'
+  spec.add_dependency 'faalis', '~> 1.0'
 end
