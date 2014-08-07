@@ -29,12 +29,16 @@
     </div>
     <% end %>
 
+    <% unless Devise.omniauth_configs.keys.empty? %>
     <div class="margin text-center">
       <span><%= _("Login using") %>:</span>
-      <br/><br />
+
+      <% Devise.omniauth_configs.keys.each do |service| %>
+      <br/><br/>
       <a class="btn bg-light-blue btn-circle"><i class="fa fa-facebook"></i></a>
       <a class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></a>
       <a class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></a>
-
+      <% end %>
     </div>
+    <% end %>
 </div>
