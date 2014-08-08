@@ -134,25 +134,25 @@
           </ul>
         </li>
 
-        <li class="dropdown tasks-menu">
+        <li class="dropdown messages-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="fa fa-flag"></i>
           </a>
           <ul class="dropdown-menu">
             <li class="header" translate>Select language.</li>
+            <li>
               <ul class="menu">
                 <% ::I18n.available_locales.each do |locale| %>
                 <li><!-- Task item -->
-                  <a class="point" href="<%= "/#{locale.to_s}/#{Faalis::Engine.dashboard_namespace.to_s}/" %>">
-                    <div>
+                  <a href="<%= "/#{locale.to_s}/#{Faalis::Engine.dashboard_namespace.to_s}/" %>">
                     <h4>
-                      <%= locale.upcase %>-
+                      <%= locale.upcase %>
                     </h4>
-                    </div>
                   </a>
                 </li><!-- end task item -->
                 <% end %>
               </ul>
+            </li>
           </ul>
         </li>
         <!-- Tasks: style can be found in dropdown.less -->
