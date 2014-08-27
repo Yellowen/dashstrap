@@ -18,7 +18,6 @@
     <body class="skin-blue" data-current-user="<%= current_user.to_json %>">
       <%= yield %>
 
-      <%= javascript_include_tag 'dashboard' %>
       <%= javascript_include_tag Faalis::Engine.dashboard_js_manifest %>
       <%= javascript_include_tag "locale/#{::I18n.locale}" %>
 
