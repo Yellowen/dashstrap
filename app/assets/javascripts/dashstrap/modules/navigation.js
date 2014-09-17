@@ -3,12 +3,14 @@ var Nav = angular.module("Navigation", []);
 window.dashboard_dependencies = window.dashboard_dependencies || [];
 window.dashboard_dependencies.push("Navigation");
 
-Nav.controller("NavController", [function(){
+Nav.controller("NavigationController", ["$rootScope", function($rootScope){
     var that = this;
 
-    this.show_sidebar = true;
+    $rootScope.show_sidebar = true;
 
+    console.log("here");
     this.toggle_sidebar = function() {
-        return !that.show_sidebar;
+        console.log("there");
+        $rootScope.show_sidebar = !$rootScope.show_sidebar;
     };
 }]);
