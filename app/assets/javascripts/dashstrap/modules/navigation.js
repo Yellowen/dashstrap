@@ -1,4 +1,4 @@
-var Nav = angular.module("Navigation", []);
+var Nav = angular.module("Navigation", ['ui.bootstrap']);
 
 window.dashboard_dependencies = window.dashboard_dependencies || [];
 window.dashboard_dependencies.push("Navigation");
