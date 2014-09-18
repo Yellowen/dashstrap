@@ -1,7 +1,6 @@
-var Nav = angular.module("Navigation", ['ui.bootstrap']);
+var Nav = angular.module("Navigation", []);
 
-window.dashboard_dependencies = window.dashboard_dependencies || [];
-window.dashboard_dependencies.push("Navigation");
+add_dependency("Navigation");
 
 Nav.controller("NavigationController", ["$rootScope", function($rootScope){
     var that = this;

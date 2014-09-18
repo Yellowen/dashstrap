@@ -1,8 +1,11 @@
 // Module module :P
 var Modules = angular.module("Modules", ["ngRoute", "ngAnimate"]);
 
+add_dependency("Modules");
+
 // This controller is responsible to parse modules and load them
 Modules.controller("ModulesController", ["$location", "$scope", "$controller", "UserPermissions", function($location, $scope, $controller, User){
+
     var that = this;
     this.modules = _.filter(DModules, function(module){
 
