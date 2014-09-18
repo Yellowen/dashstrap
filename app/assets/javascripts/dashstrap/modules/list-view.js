@@ -337,7 +337,7 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
             objects: "=",
 
             // Object attribute which should show as title in main li
-            title_attr: "&titleAttribute",
+            title_attr: "=titleAttribute",
 
             // Template address for details section
             details_template: "=detailsTemplate",
