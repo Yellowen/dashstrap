@@ -26,23 +26,16 @@
 
       <div class="box-body table-responsive just-top-padding">
 
-        <table class="table table-hover">
+        <table class="table table-hover list-view-table"  ng-if="get_current_page().length > 0">
 
           <tbody>
             <tr>
               <th><i class="fa fa fa-square"></i></th>
+              <th>{{ title_attr }}</th>
               <th></th>
-              <th>Date</th>
-              <th>Status</th>
-              <th>Reason</th>
             </tr>
 
-
-            <tr ng-if="(get_current_page().length == 0) && (list_view == true)" ng-if="list_view == true">
-              <span translate>There is no data!</span>
-            </tr>
-
-            <tr ng-repeat="object in get_current_page()" ng-click="select_item(object)" class="pointer">--- {{ $id  }} ---
+            <tr ng-repeat="object in get_current_page()" ng-click="select_item(object)" class="pointer" >
 
               <td>
                 <i ng-class="{fa:true, 'fa-check-square':object.is_selected, 'fa-square':!object.is_selected}"></i>
@@ -54,7 +47,8 @@
 
 
               <td>
-                <i ng-click="toggle_details(object)"  class="{{ handle_icon }} {{ handle_icon_expand(object) }} handle fa "></i>
+                <span><i ng-click="toggle_details(object)"  class="{{ handle_icon }} {{ handle_icon_expand(object) }} handle fa "></i></span>
+
               </td>
 
             </tr>
@@ -64,8 +58,19 @@
                 </div>
               </td>
             </tr>
-            </span>
+                </span>
 
+
+
+          </tbody>
+        </table>
+        <table class="table table-hover list-view-table" ng-show="get_current_page().length == 0">
+          <tbody>
+            <tr>
+              <td colspan="40" style="text-align: center;">
+                <span translate>There is no data!</span>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div><!-- /.box-body -->
@@ -76,31 +81,31 @@
 
 
 <div class="table-list">
-    <li class="table-summery">
-      <div class="small-6 columns">
-        <div class="pagination">
-          <span ng-if="has_pagination()">
-            <i class="fa {{ first_page_icon }}" ng-click="go_to_first_page()"></i>
-            <i class="fa {{ prev_page_icon }}" ng-click="go_to_prev_page()"></i>
+  <li class="table-summery">
+    <div class="small-6 columns">
+      <div class="pagination">
+        <span ng-if="has_pagination()">
+          <i class="fa {{ first_page_icon }}" ng-click="go_to_first_page()"></i>
+          <i class="fa {{ prev_page_icon }}" ng-click="go_to_prev_page()"></i>
 
-            <input type="text" class="pagination_input" ng-model="targetpage" ng-keypress="go_to_page($event, targetpage)" tabindex="3" value="{{current_page()}}"/>
+          <input type="text" class="pagination_input" ng-model="targetpage" ng-keypress="go_to_page($event, targetpage)" tabindex="3" value="{{current_page()}}"/>
 
-            <i class="fa {{ next_page_icon }}" ng-click="go_to_next_page()"></i>
-            <i class="fa {{ last_page_icon }}" ng-click="go_to_last_page()"></i>
+          <i class="fa {{ next_page_icon }}" ng-click="go_to_next_page()"></i>
+          <i class="fa {{ last_page_icon }}" ng-click="go_to_last_page()"></i>
 
-            <span class="elabel rounded lightergray" title="{{ 'Current Page' | translate }}"><i class="fa fa-file-o"></i> {{ current_page() }}</span>
-            <span class="elabel rounded lightergray" title="{{ 'Total Pages' | translate}}"><i class="fa fa-files-o"></i> {{ total_pages() }}</span>
-          </span>
+          <span class="elabel rounded lightergray" title="{{ 'Current Page' | translate }}"><i class="fa fa-file-o"></i> {{ current_page() }}</span>
+          <span class="elabel rounded lightergray" title="{{ 'Total Pages' | translate}}"><i class="fa fa-files-o"></i> {{ total_pages() }}</span>
+        </span>
 
-          <span class="elabel rounded lightergray" title="{{ 'Item(s)' | translate }}"><i class="fa fa-list-ul"></i> {{ objects_count() }}</span>
-          <span class="elabel rounded lightergray" title="{{ 'Selected' | translate }}"><i class="fa {{ hand_icon }}"></i> {{ selected_count() }}
-          </span>
-        </div>
-
+        <span class="elabel rounded lightergray" title="{{ 'Item(s)' | translate }}"><i class="fa fa-list-ul"></i> {{ objects_count() }}</span>
+        <span class="elabel rounded lightergray" title="{{ 'Selected' | translate }}"><i class="fa {{ hand_icon }}"></i> {{ selected_count() }}
+        </span>
       </div>
-      <div class="small-6 columns text-right">
-        <span class="btn yellow tiny" ng-click="toggle_select()" translate>Toggle Select</span>
-        <span class="btn blue tiny"  ng-click="select_all()" ><span ng-if="! is_all_selected">Select All</span><span ng-if="is_all_selected">Deselect All</span></span>
-        <span ng-if="can('destroy', permission_model)"  ng-click="delete_items()"><span class="btn red tiny">{{delete_title || "Delete"}}</span></span>
 
-      </div>
+    </div>
+    <div class="small-6 columns text-right">
+      <span class="btn yellow tiny" ng-click="toggle_select()" translate>Toggle Select</span>
+      <span class="btn blue tiny"  ng-click="select_all()" ><span ng-if="! is_all_selected">Select All</span><span ng-if="is_all_selected">Deselect All</span></span>
+      <span ng-if="can('destroy', permission_model)"  ng-click="delete_items()"><span class="btn red tiny">{{delete_title || "Delete"}}</span></span>
+
+    </div>

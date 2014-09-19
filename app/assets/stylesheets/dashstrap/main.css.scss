@@ -3,9 +3,31 @@
    padding-top: 0.5em !important;
 }
 
-.box-tools {
-   .btn {
-      margin-left: 0.2em;
-      margin-right: 0.2em;
+.list-view-table {
+   tr {
+      th:first-child, td:first-child {
+         width: 2em;
+      }
+      th:last-child, td:last-child {
+         span {
+            padding-left: 0.3em;
+            padding-right: 0.3em;
+            cursor: pointer;
+         }
+         padding-right: 1em;
+         text-align: right;
+      }
    }
+
+   .box-tools {
+      .btn {
+         margin-left: 0.2em;
+         margin-right: 0.2em;
+      }
+   }
+
+}
+
+.pointer {
+   cursor: pointer;
 }

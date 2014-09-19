@@ -1,0 +1,8 @@
+.list-view-table {
+   tr {
+      th:last-child, td:last-child {
+         padding-left: 1em;
+         text-align: left;
+      }
+   }
+}

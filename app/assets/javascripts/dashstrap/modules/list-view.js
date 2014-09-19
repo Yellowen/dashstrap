@@ -121,7 +121,7 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
         };
 
         scope.is_ltr = ltr;
-        scope.handle_icon = ltr ? "fa-angle-right" : "fa-angle-left";
+        scope.handle_icon = "fa-eye";
         scope.first_page_icon = ltr ? "fa-angle-double-left" : "fa-angle-double-right";
         scope.last_page_icon = ltr ? "fa-angle-double-right" : "fa-angle-double-left";
         scope.prev_page_icon = ltr ? "fa-angle-left" : "fa-angle-right";
@@ -131,7 +131,7 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
 
         scope.handle_icon_expand = function(object){
             if(scope.should_view(object)) {
-                return ltr ? "fa-rotate-90" : "fa-rotate-270";
+                return "fa-eye-slash";
             }
             return "";
         };
