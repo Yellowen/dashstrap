@@ -3,11 +3,19 @@
    padding-top: 0.5em !important;
 }
 
-.box-tools {
+.box-tools, .box-title {
    .btn {
       margin-left: 0.2em;
       margin-right: 0.2em;
+      a {
+         color: #fff;
+      }
    }
+   .search-group {
+      margin-left: 0.2em;
+      margin-right: 0.2em;
+   }
+
 }
 
 .list-view-table {

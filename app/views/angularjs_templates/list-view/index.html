@@ -11,14 +11,25 @@
   <div class="col-xs-12">
     <div class="box">
       <div class="box-header">
-        <h3 class="box-title">
+        <h3 class="box-title" ng-if="button_on_left == false">
           <!--TITLE -->
           {{ list_title }}
         </h3>
 
-        <div class="box-tools">
+        <div class="box-title" ng-if="button_on_left == true">
           <button data-ng-repeat="button in buttons" class="{{ button.classes }} pull-right btn" type="button" if-user="has_permission(button)"><a  object-action object="button"><i class="{{ button.icon }}"></i> {{ button.title | translate }}</a></button>
+        </div>
 
+
+        <div class="box-tools">
+
+          <div class="input-group pull-right input-group-sm search-group col-sm-2"  ng-if="search !== true">
+            <input type="search" class="form-control " ng-model="searchterm" placeholder="{{ 'Search' | translate}} ...">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+          </div>
+          <span ng-if="!button_on_left">
+            <button data-ng-repeat="button in buttons" class="{{ button.classes }} pull-right btn" type="button" if-user="has_permission(button)"><a  object-action object="button"><i class="{{ button.icon }}"></i> {{ button.title | translate }}</a></button>
+          </span>
         </div>
 
 
@@ -35,7 +46,7 @@
               <th></th>
             </tr>
 
-            <tr ng-repeat="object in get_current_page()">
+            <tr ng-repeat-start="object in get_current_page()">
 
               <td>
                 <i ng-click="select_item(object)" ng-class="{fa:true, 'fa-check-square':object.is_selected, 'fa-square':!object.is_selected, pointer:true}"></i>
@@ -58,8 +69,6 @@
                 </div>
               </td>
             </tr>
-                </span>
-
 
 
           </tbody>
@@ -111,7 +120,7 @@
         </span>
 
         <div class="pull-right">
-          <span class="btn btn-sm btn-warning" ng-click="toggle_select()" translate>Toggle Select</span>
+          <span class="btn btn-sm bg-olive" ng-click="toggle_select()" translate>Toggle Select</span>
           <span ng-if="can('destroy', permission_model)"  ng-click="delete_items()"><span class="btn btn-sm btn-danger">{{delete_title || "Delete"}}</span></span>
 
         </div>
