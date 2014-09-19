@@ -3,6 +3,13 @@
    padding-top: 0.5em !important;
 }
 
+.box-tools {
+   .btn {
+      margin-left: 0.2em;
+      margin-right: 0.2em;
+   }
+}
+
 .list-view-table {
    tr {
       th:first-child, td:first-child {
@@ -19,15 +26,17 @@
       }
    }
 
-   .box-tools {
-      .btn {
-         margin-left: 0.2em;
-         margin-right: 0.2em;
-      }
-   }
+
 
 }
 
 .pointer {
    cursor: pointer;
+}
+
+.pagination_page {
+   width: 8em;
+   padding-left: 1em;
+   padding-right: 1em;
+
 }

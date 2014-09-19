@@ -178,8 +178,6 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
         // Selection related methods -----------------------------------
         // Select a row in table
         scope.select_item = function(object) {
-            console.log(">>>>>>>>>>>>>>>>>");
-            console.log(object);
             if (object['is_selected'] !== undefined) {
                 object.is_selected = ! object.is_selected;
             }
