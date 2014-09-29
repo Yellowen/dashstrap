@@ -9,7 +9,7 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      <span translate>Dashboard</span>
+      <span>{{ section_name || 'Dashboard' | translate }}</span>
       <small><%= Faalis::Engine.try(:slug) || 'SLUG' %></small>
     </h1>
     <ol class="breadcrumb">

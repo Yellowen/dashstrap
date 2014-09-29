@@ -1,3 +1,5 @@
+$tools_link_color: #3f3f3f;
+
 .just-top-padding {
    padding: inherit !important;
    padding-top: 0.5em !important;
@@ -35,6 +37,9 @@
 
          .tools {
             display: none;
+            a {
+               color: $tools_link_color;
+            }
          }
 
          &:hover {

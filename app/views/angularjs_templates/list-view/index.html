@@ -60,7 +60,7 @@
               <td class="row_buttons">
 
                 <div class="tools">
-                  <a ng-repeat-start="tool in tools" href="{{ tool.url }} ng-if="tool.url !== undefined"><i class="{{ tool.icon }} pointer"></i></a>
+                  <a ng-repeat-start="tool in tools" href="{{ tool.url(object) }}" ng-if="tool.url !== undefined"><i class="{{ tool.icon }} pointer"></i></a>
                   <i ng-repeat-end ng-click="tool.callback(object)" class="{{ tool.icon }} pointer" ng-if="tool.callback !== undefined"></i>
                   <i ng-click="toggle_details(object)"  class="{{ handle_icon }} {{ handle_icon_expand(object) }} handle fa pointer"></i>
                 </div>

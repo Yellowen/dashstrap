@@ -358,6 +358,12 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
             // On delete method
             on_delete: "=onDelete",
 
+            // Title of list box
+            list_title: '=listTitle',
+
+            // Tools array to use/show for each row
+            tools: '=',
+
             // Custom delete title method
             delete_title: "=deleteTitle"
         },

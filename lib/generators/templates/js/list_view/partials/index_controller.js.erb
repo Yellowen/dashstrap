@@ -3,8 +3,22 @@
 <%= resource.pluralize %>.controller("<%= resource %>Controller", ["$scope", "gettext", "Restangular", "catch_error", "$location", "$routeParams", function($scope, gettext, API, catch_error, $location, $routeParams){
 
     <% parents.each do |parent| %>
+    // ID of parent resource
     $scope.<%= parent %>_id = $routeParams.<%= parent %>_id;
     <% end %>
+
+    $scope.list_title = '<%= resource %>';
+
+    $scope.tools = [
+        {
+            url: function(object) {
+                console.log(object);
+                return "#" + <% parents.each do |p| %>"/<%= p %>/" + $scope.<%= p %>_id + <% end %>"/<%= resource_url %>/" + object.id + "/edit";
+            },
+            icon: 'fa fa-edit'
+        }
+    ];
+
     <% unless no_filter? %>$scope.filter_config = {
         list: <% if parent? %>API.<% parents.each do |parent| %>one("<%= parent %>", $scope.<%= parent %>_id)<% end %>.all("<%= resource.pluralize.underscore %>")<% else %>API.all("<%= resource.pluralize.underscore %>")<% end %>
     };
@@ -48,7 +62,7 @@
         {
             title: gettext("New"),
             icon: "fa fa-plus",
-            classes: "btn tiny green",
+            classes: "btn btn-success",
             permission: {
               name: "create",
               model: "<% if model_specified? %><%= model %><% else %><%= resource.classify %><% end %>"
@@ -59,7 +73,7 @@
         {
             title: gettext("Bulk Edit"),
             icon: "fa fa-edit",
-            classes: "btn tiny yellow",
+            classes: "btn btn-warning",
             permission: {
               name: "update",
               model: "<% if model_specified? %><%= model %><% else %><%= resource.classify %><% end %>"
@@ -72,7 +86,7 @@
         {
             title: gettext("Duplicate"),
             icon: "fa fa-files-o",
-            classes: "btn tiny red",
+            classes: "btn btn-danger",
             permission: {
               name: "create",
               model: "<% if model_specified? %><%= model %><% else %><%= resource.classify %><% end %>"
