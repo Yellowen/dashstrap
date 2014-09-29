@@ -1,8 +1,9 @@
 .list-view-table {
    tr {
-      th:last-child, td:last-child {
+      .row_buttons {
          padding-left: 1em;
-         text-align: left;
+         text-left: right;
       }
+
    }
 }

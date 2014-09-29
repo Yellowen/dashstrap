@@ -29,8 +29,19 @@
             padding-right: 0.3em;
             cursor: pointer;
          }
-         padding-right: 1em;
-         text-align: right;
+      }
+
+      &.title-row {
+
+         .tools {
+            display: none;
+         }
+
+         &:hover {
+            .tools {
+               display: block;
+            }
+         }
       }
    }
 

@@ -1,9 +1,10 @@
 .list-view-table {
    tr {
-      th:last-child, td:last-child {
+      .row_buttons {
          padding-right: 1em;
          text-align: right;
       }
+
    }
 
 

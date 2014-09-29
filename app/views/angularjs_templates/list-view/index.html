@@ -46,7 +46,7 @@
               <th></th>
             </tr>
 
-            <tr ng-repeat-start="object in get_current_page()">
+            <tr ng-repeat-start="object in get_current_page()" class='title-row'>
 
               <td>
                 <i ng-click="select_item(object)" ng-class="{fa:true, 'fa-check-square':object.is_selected, 'fa-square':!object.is_selected, pointer:true}"></i>
@@ -57,8 +57,13 @@
               </td>
 
 
-              <td>
-                <span><i ng-click="toggle_details(object)"  class="{{ handle_icon }} {{ handle_icon_expand(object) }} handle fa "></i></span>
+              <td class="row_buttons">
+
+                <div class="tools">
+                  <a ng-repeat-start="tool in tools" href="{{ tool.url }} ng-if="tool.url !== undefined"><i class="{{ tool.icon }} pointer"></i></a>
+                  <i ng-repeat-end ng-click="tool.callback(object)" class="{{ tool.icon }} pointer" ng-if="tool.callback !== undefined"></i>
+                  <i ng-click="toggle_details(object)"  class="{{ handle_icon }} {{ handle_icon_expand(object) }} handle fa pointer"></i>
+                </div>
 
               </td>
 
@@ -109,7 +114,7 @@
           <div class="input-group input-group-sm pagination_page pull-left">
             <input type="text" class="pagination_input form-control" ng-model="targetpage" ng-keypress="go_to_page($event, targetpage)" tabindex="3" value="{{current_page()}}" novalidate>
             <span class="input-group-btn">
-              <button class="btn btn-info btn-flat" type="button" translate>Go!</button>
+              <button class="btn btn-info btn-flat" ng-click="go_to_page($event, targetpage)" type="button" translate>Go!</button>
             </span>
           </div>
         </span>
