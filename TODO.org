@@ -1,0 +1,2 @@
+* Tasks
+** TODO Use ng-clock to avoid un-rendered templates to show in browser
