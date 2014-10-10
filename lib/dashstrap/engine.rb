@@ -1,4 +1,5 @@
 require 'faalis/extensions'
+require 'jquery-ui-rails'
 
 module Dashstrap
   class TemplateEngine < ::Rails::Engine
