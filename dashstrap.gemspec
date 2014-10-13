@@ -23,6 +23,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'railties', '~>4'
   spec.add_dependency 'faalis', '~> 1.0.0.alpha1'
   spec.add_dependency 'jquery-rails'
+  spec.add_dependency 'font-awesome-rails'
+
   spec.add_dependency 'jquery-ui-rails'
   #spec.add_dependency 'rails-assets-angular-ui-bootstrap'
 end
