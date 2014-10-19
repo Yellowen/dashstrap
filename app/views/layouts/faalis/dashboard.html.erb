@@ -19,7 +19,7 @@
       <%= yield %>
 
       <%= javascript_include_tag Faalis::Engine.dashboard_js_manifest %>
-      <%= javascript_include_tag "locale/#{::I18n.locale}" %>
+      <%= javascript_include_tag "locales/#{::I18n.locale}" %>
 
     </body>
 </html>
