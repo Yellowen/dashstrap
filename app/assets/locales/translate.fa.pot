@@ -1,0 +1,93 @@
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"#-#-#-#-#  translate.fa.pot  #-#-#-#-#\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Behnam Ahmad Khan Beigi <yottanamI@gnu.org>\n"
+"Language: fa\n"
+"Language-Team: Persian <>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"PO-Revision-Date: 2014-09-02 11:11+0430\n"
+"X-Generator: Gtranslator 2.91.6\n"
+
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: app/assets/javascripts/dashstrap/modules/list-view.js
+msgid "Are sure you want to delete"
+msgstr "آیا از حذف اطمینان دارید"
+
+#: app/views/angularjs_templates/fields/datetime/datetime.html
+msgid "Click to pick a date"
+msgstr "برای انتخاب تاریخ کلیک کنید"
+
+#: app/views/angularjs_templates/list-view/index.html
+msgid "Current Page"
+msgstr "صفحه جاری"
+
+#: app/views/angularjs_templates/modules.html
+msgid "Dashboard"
+msgstr "پنل کاربری"
+
+#: app/views/angularjs_templates/fields/control-combo/control-list.html
+msgid "Facility Name"
+msgstr "نام وسیله"
+
+#: app/views/angularjs_templates/list-view/index.html
+msgid "Go!"
+msgstr "برو!"
+
+#: app/views/angularjs_templates/list-view/index.html
+msgid "Item(s)"
+msgstr "آیتم(ها)"
+
+#: app/views/angularjs_templates/fields/control-combo/control-list.html
+msgid "Note"
+msgstr "متن"
+
+#: app/views/angularjs_templates/fields/control-combo/control-list.html
+msgid "Number"
+msgstr "عدد"
+
+#: app/views/angularjs_templates/index.html
+#: app/views/angularjs_templates/modules.html
+msgid "Online"
+msgstr "آنلاین"
+
+#: app/views/angularjs_templates/fields/control-combo/control-list.html
+msgid "Price?"
+msgstr "قیمت؟"
+
+#: app/views/angularjs_templates/list-view/index.html
+msgid "Search"
+msgstr "جستجو"
+
+#: app/views/angularjs_templates/list-view/index.html
+msgid "Selected"
+msgstr "انتخاب شده"
+
+#: app/views/angularjs_templates/list-view/index.html
+msgid "There is no data!"
+msgstr "تاریخ نامعتبر"
+
+#: app/views/angularjs_templates/list-view/index.html
+msgid "Toggle Select"
+msgstr "پین انتخاب"
+
+#: app/views/angularjs_templates/list-view/index.html
+msgid "Total Pages"
+msgstr "کل صفحات"
+
+#: app/assets/javascripts/dashstrap/modules/list-view.js
+msgid "item(s)?"
+msgstr "آیتیم(ها)؟"
+
+#: app/views/angularjs_templates/fields/string/string.html
+msgid "{{ item.title }}"
+msgstr ""
+
+#: app/views/angularjs_templates/modules.html
+msgid "{{ module.title}}"
+msgstr ""
