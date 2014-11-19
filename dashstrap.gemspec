@@ -31,4 +31,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'jquery-ui-rails'
   #spec.add_dependency 'rails-assets-angular-ui-bootstrap'
+
+  spec.add_dependency 'select2-rails'
 end

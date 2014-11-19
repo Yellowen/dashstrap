@@ -1,6 +1,7 @@
 require 'faalis/extensions'
 require 'jquery-ui-rails'
 require 'font-awesome-rails'
+require 'select2-rails'
 
 module Dashstrap
   class TemplateEngine < ::Rails::Engine
