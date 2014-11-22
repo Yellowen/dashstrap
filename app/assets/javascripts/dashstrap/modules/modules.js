@@ -24,6 +24,7 @@ Modules.controller("ModulesController", ["$location", "$scope", "$controller", "
             _.each(menu_items, function(menu) {
                 // If menu item provided a permission attribute we have to check user permission for that
                 if ("permission" in menu){
+
                     if ((!("action" in menu.permission)) || (!("model" in menu.permission))) {
                         console.log("Button permission should be an object and has 'action' and 'model' keys");
                         throw "Button permission should be an object and has 'name' and 'model' keys";
