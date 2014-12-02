@@ -19,7 +19,19 @@ div, p, h1,h2,h3,h4,h5,h6,a{
    tr {
       .row_buttons {
          padding-left: 1em;
-         text-left: right;
+         text-align: left;
+      }
+
+      &.title-row {
+
+         .tools {
+
+            .tool {
+               margin-left:2em;
+
+            }
+         }
+
       }
 
    }
