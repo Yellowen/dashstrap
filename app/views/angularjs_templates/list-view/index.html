@@ -44,6 +44,7 @@
               <th><i ng-click="select_all()" ng-class="{fa:true, 'fa-square':!is_all_selected, 'fa-check-square':is_all_selected, pointer:true}"></i></th>
               <th>{{ title_attr }}</th>
               <th></th>
+              <th></th>
             </tr>
 
             <tr ng-repeat-start="object in get_current_page()" class='title-row'>
@@ -56,14 +57,32 @@
                 {{ get_attr(object, title_attr) }}
               </td>
 
-
+              <td>
+                <div class="pull-left" ng-init="badges = badge_processor(object)">
+                  <span ng-repeat="badge in badges" class="badge " ng-class="badge.color" title="{{badge.text}}">
+                    <i ng-show="badge.icon" class="{{badge.icon}}"></i>{{badge.text}}
+                  </span>
+                </div>
+              </td>
               <td class="row_buttons">
-
                 <div class="tools">
+
                   <span ng-repeat="tool in tools">
-                  <a  href="{{ tool.url(object) }}" class="pointer tool" ng-if="tool.url !== undefined"><i class="{{ tool.icon }} "></i> {{ tool.text }}</a>
-                  <span ng-click="tool.callback(object)" class="pointer tool" ng-if="tool.callback !== undefined"><i class="{{ tool.icon }}"></i> {{ tool.text }}</span>
-                  <span ng-click="toggle_details(object)" class="pointer tool" ng-if"tool.toggle-details !== undefined"><i class="{{ handle_icon }} {{ handle_icon_expand(object) }} handle fa"></i> {{ tool.text }}</span>
+
+                    <a href="{{ tool.url(object) }}" class="pointer tool" ng-if="tool.url !== undefined">
+                      <span translate>{{ tool.text }}</span>
+                      <i class="{{ tool.icon }} "> </i>
+                    </a>
+
+                    <span ng-click="tool.callback(object)" class="pointer tool" ng-if="tool.callback !== undefined">
+                      <span translate>{{ tool.text }}</span>
+                      <i class="{{ tool.icon }}"></i>
+                    </span>
+                  </span>
+
+                  <span ng-if="tool.toggle-details !== undefined" ng-click="toggle_details(object)" class="pointer tool" >
+                    <span translate>View</span>
+                    <i class="{{ handle_icon }} {{ handle_icon_expand(object) }} handle fa"></i>
                   </span>
                 </div>
 

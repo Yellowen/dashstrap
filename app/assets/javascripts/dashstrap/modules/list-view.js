@@ -365,7 +365,10 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
             tools: '=',
 
             // Custom delete title method
-            delete_title: "=deleteTitle"
+            delete_title: "=deleteTitle",
+
+            //Badge operation function
+            badge_processor: '=badgeProcessor'
         },
         link: link
     };

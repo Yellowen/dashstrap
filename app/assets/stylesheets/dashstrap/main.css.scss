@@ -27,8 +27,6 @@ $tools_link_color: #3f3f3f;
       }
       th:last-child, td:last-child {
          span {
-            padding-left: 0.3em;
-            padding-right: 0.3em;
             cursor: pointer;
          }
       }
@@ -36,23 +34,21 @@ $tools_link_color: #3f3f3f;
       &.title-row {
 
          .tools {
-            display: none;
+            visibility: hidden;
+
+            direction: ltr;
             a {
                color: $tools_link_color;
-
             }
          }
 
          &:hover {
             .tools {
-               display: block;
+            visibility: visible;
             }
          }
       }
    }
-
-
-
 }
 
 .pointer {
