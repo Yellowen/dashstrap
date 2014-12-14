@@ -216,7 +216,7 @@ angular.module('ui.bootstrap.accordion', ['ui.bootstrap.collapse'])
     controller:'AccordionController',
     transclude: true,
     replace: false,
-    templateUrl: 'template/accordion/accordion.html'
+    templateUrl: template_url('fields/accordion/accordion')
   };
 })
 
@@ -227,7 +227,7 @@ angular.module('ui.bootstrap.accordion', ['ui.bootstrap.collapse'])
     restrict:'EA',
     transclude:true,              // It transcludes the contents of the directive into the template
     replace: true,                // The element containing the directive will be replaced with the template
-    templateUrl:'template/accordion/accordion-group.html',
+    templateUrl:template_url('fields/accordion/accordion-group'),
     scope: {
       heading: '@',               // Interpolate the heading attribute onto this scope
       isOpen: '=?',
@@ -306,7 +306,7 @@ angular.module('ui.bootstrap.alert', [])
   return {
     restrict:'EA',
     controller:'AlertController',
-    templateUrl:'template/alert/alert.html',
+    templateUrl:template_url('fields/alert/alert'),
     transclude:true,
     replace:true,
     scope: {
@@ -619,7 +619,7 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
     replace: true,
     controller: 'CarouselController',
     require: 'carousel',
-    templateUrl: 'template/carousel/carousel.html',
+    templateUrl: template_url('fields/carousel/carousel'),
     scope: {
       interval: '=',
       noTransition: '=',
@@ -675,7 +675,7 @@ function CarouselDemoCtrl($scope) {
     restrict: 'EA',
     transclude: true,
     replace: true,
-    templateUrl: 'template/carousel/slide.html',
+    templateUrl: template_url('fields/carousel/slide'),
     scope: {
       active: '=?'
     },
@@ -1158,7 +1158,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   return {
     restrict: 'EA',
     replace: true,
-    templateUrl: 'template/datepicker/datepicker.html',
+    templateUrl: template_url('fields/datepicker/datepicker'),
     scope: {
       datepickerMode: '=?',
       dateDisabled: '&'
@@ -1179,7 +1179,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   return {
     restrict: 'EA',
     replace: true,
-    templateUrl: 'template/datepicker/day.html',
+    templateUrl: template_url('fields/datepicker/day'),
     require: '^datepicker',
     link: function(scope, element, attrs, ctrl) {
       scope.showWeeks = ctrl.showWeeks;
@@ -1287,7 +1287,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   return {
     restrict: 'EA',
     replace: true,
-    templateUrl: 'template/datepicker/month.html',
+    templateUrl: template_url('fields/datepicker/month'),
     require: '^datepicker',
     link: function(scope, element, attrs, ctrl) {
       ctrl.step = { years: 1 };
@@ -1342,7 +1342,7 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
   return {
     restrict: 'EA',
     replace: true,
-    templateUrl: 'template/datepicker/year.html',
+    templateUrl: template_url('fields/datepicker/year'),
     require: '^datepicker',
     link: function(scope, element, attrs, ctrl) {
       var range = ctrl.yearRange;
@@ -1590,7 +1590,7 @@ function ($compile, $parse, $document, $position, dateFilter, dateParser, datepi
     restrict:'EA',
     replace: true,
     transclude: true,
-    templateUrl: 'template/datepicker/popup.html',
+    templateUrl: template_url('fields/datepicker/popup'),
     link:function (scope, element, attrs) {
       element.bind('click', function(event) {
         event.preventDefault();
@@ -1818,7 +1818,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
     return {
       restrict: 'EA',
       replace: true,
-      templateUrl: 'template/modal/backdrop.html',
+      templateUrl: template_url('fields/modal/backdrop'),
       link: function (scope) {
 
         scope.animate = false;
@@ -1841,7 +1841,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.transition'])
       replace: true,
       transclude: true,
       templateUrl: function(tElement, tAttrs) {
-        return tAttrs.templateUrl || 'template/modal/window.html';
+        return tAttrs.templateUrl || template_url('fields/modal/window');
       },
       link: function (scope, element, attrs) {
         element.addClass(attrs.windowClass || '');
@@ -2231,7 +2231,7 @@ angular.module('ui.bootstrap.pagination', [])
     },
     require: ['pagination', '?ngModel'],
     controller: 'PaginationController',
-    templateUrl: 'template/pagination/pagination.html',
+    templateUrl: template_url('fields/pagination/pagination'),
     replace: true,
     link: function(scope, element, attrs, ctrls) {
       var paginationCtrl = ctrls[0], ngModelCtrl = ctrls[1];
@@ -2342,7 +2342,7 @@ angular.module('ui.bootstrap.pagination', [])
     },
     require: ['pager', '?ngModel'],
     controller: 'PaginationController',
-    templateUrl: 'template/pagination/pager.html',
+    templateUrl: template_url('fields/pagination/pager'),
     replace: true,
     link: function(scope, element, attrs, ctrls) {
       var paginationCtrl = ctrls[0], ngModelCtrl = ctrls[1];
@@ -2545,7 +2545,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
               // Set the initial positioning.
               tooltip.css({ top: 0, left: 0, display: 'block' });
 
-              // Now we add it to the DOM because need some info about it. But it's not 
+              // Now we add it to the DOM because need some info about it. But it's not
               // visible yet anyway.
               if ( appendToBody ) {
                   $document.find( 'body' ).append( tooltip );
@@ -2573,7 +2573,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
               $timeout.cancel( popupTimeout );
               popupTimeout = null;
 
-              // And now we remove it from the DOM. However, if we have animation, we 
+              // And now we remove it from the DOM. However, if we have animation, we
               // need to wait for it to expire beforehand.
               // FIXME: this is a placeholder for a port of the transitions library.
               if ( scope.tt_animation ) {
@@ -2683,7 +2683,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
     restrict: 'EA',
     replace: true,
     scope: { content: '@', placement: '@', animation: '&', isOpen: '&' },
-    templateUrl: 'template/tooltip/tooltip-popup.html'
+    templateUrl: template_url('fields/tooltip/tooltip-popup')
   };
 })
 
@@ -2696,7 +2696,7 @@ angular.module( 'ui.bootstrap.tooltip', [ 'ui.bootstrap.position', 'ui.bootstrap
     restrict: 'EA',
     replace: true,
     scope: { content: '@', placement: '@', animation: '&', isOpen: '&' },
-    templateUrl: 'template/tooltip/tooltip-html-unsafe-popup.html'
+    templateUrl: template_url('fields/tooltip/tooltip-html-unsafe-popup')
   };
 })
 
@@ -2716,7 +2716,7 @@ angular.module( 'ui.bootstrap.popover', [ 'ui.bootstrap.tooltip' ] )
     restrict: 'EA',
     replace: true,
     scope: { title: '@', content: '@', placement: '@', animation: '&', isOpen: '&' },
-    templateUrl: 'template/popover/popover.html'
+    templateUrl: template_url('fields/popover/popover')
   };
 })
 
@@ -2768,7 +2768,7 @@ angular.module('ui.bootstrap.progressbar', [])
         controller: 'ProgressController',
         require: 'progress',
         scope: {},
-        templateUrl: 'template/progressbar/progress.html'
+        templateUrl: template_url('fields/progressbar/progress')
     };
 })
 
@@ -2782,7 +2782,7 @@ angular.module('ui.bootstrap.progressbar', [])
             value: '=',
             type: '@'
         },
-        templateUrl: 'template/progressbar/bar.html',
+        templateUrl: template_url('fields/progressbar/bar'),
         link: function(scope, element, attrs, progressCtrl) {
             progressCtrl.addBar(scope, element);
         }
@@ -2799,7 +2799,7 @@ angular.module('ui.bootstrap.progressbar', [])
             value: '=',
             type: '@'
         },
-        templateUrl: 'template/progressbar/progressbar.html',
+        templateUrl: template_url('fields/progressbar/progressbar'),
         link: function(scope, element, attrs, progressCtrl) {
             progressCtrl.addBar(scope, angular.element(element.children()[0]));
         }
@@ -2877,7 +2877,7 @@ angular.module('ui.bootstrap.rating', [])
       onLeave: '&'
     },
     controller: 'RatingController',
-    templateUrl: 'template/rating/rating.html',
+    templateUrl: template_url('fields/rating/rating'),
     replace: true,
     link: function(scope, element, attrs, ctrls) {
       var ratingCtrl = ctrls[0], ngModelCtrl = ctrls[1];
@@ -2976,7 +2976,7 @@ angular.module('ui.bootstrap.tabs', [])
       type: '@'
     },
     controller: 'TabsetController',
-    templateUrl: 'template/tabs/tabset.html',
+    templateUrl: template_url('fields/tabs/tabset'),
     link: function(scope, element, attrs) {
       scope.vertical = angular.isDefined(attrs.vertical) ? scope.$parent.$eval(attrs.vertical) : false;
       scope.justified = angular.isDefined(attrs.justified) ? scope.$parent.$eval(attrs.justified) : false;
@@ -3069,7 +3069,7 @@ angular.module('ui.bootstrap.tabs', [])
     require: '^tabset',
     restrict: 'EA',
     replace: true,
-    templateUrl: 'template/tabs/tab.html',
+    templateUrl: template_url('fields/tabs/tab'),
     transclude: true,
     scope: {
       active: '=?',
@@ -3407,7 +3407,7 @@ angular.module('ui.bootstrap.timepicker', [])
     controller:'TimepickerController',
     replace: true,
     scope: {},
-    templateUrl: 'template/timepicker/timepicker.html',
+    templateUrl: template_url('fields/timepicker/timepicker'),
     link: function(scope, element, attrs, ctrls) {
       var timepickerCtrl = ctrls[0], ngModelCtrl = ctrls[1];
 
@@ -3590,7 +3590,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
       //we need to propagate user's query so we can higlight matches
       scope.query = undefined;
 
-      //Declare the timeout promise var outside the function scope so that stacked calls can be cancelled later 
+      //Declare the timeout promise var outside the function scope so that stacked calls can be cancelled later
       var timeoutPromise;
 
       //plug into $parsers pipeline to open a typeahead on view changes initiated from DOM
@@ -3746,7 +3746,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
         select:'&'
       },
       replace:true,
-      templateUrl:'template/typeahead/typeahead-popup.html',
+      templateUrl:template_url('fields/typeahead/typeahead-popup'),
       link:function (scope, element, attrs) {
 
         scope.templateUrl = attrs.templateUrl;
@@ -3779,7 +3779,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
         query:'='
       },
       link:function (scope, element, attrs) {
-        var tplUrl = $parse(attrs.templateUrl)(scope.$parent) || 'template/typeahead/typeahead-match.html';
+        var tplUrl = $parse(attrs.templateUrl)(scope.$parent) || template_url('fields/typeahead/typeahead-match');
         $http.get(tplUrl, {cache: $templateCache}).success(function(tplContent){
            element.replaceWith($compile(tplContent.trim())(scope));
         });
