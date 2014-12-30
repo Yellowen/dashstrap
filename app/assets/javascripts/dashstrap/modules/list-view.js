@@ -362,13 +362,14 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
             list_title: '=listTitle',
 
             // Tools array to use/show for each row
-            tools: '=',
+            tools_processor: '=toolsProcessor',
 
             // Custom delete title method
             delete_title: "=deleteTitle",
 
             //Badge operation function
             badge_processor: '=badgeProcessor'
+
         },
         link: link
     };

@@ -59,8 +59,7 @@
 
               <td>
                 <div class="pull-left" ng-init = "badges = badge_processor(object)" >
-
-                  <span ng-repeat="badge in badges" class="badge" class="{{badge.color}}" title="{{badge.text}}">
+                  <span ng-repeat="badge in badges" class="badge {{badge.color}}"  title="{{badge.text}}">
                     <i ng-show="badge.icon !== undefined" class="{{badge.icon}}"></i>{{badge.text}}
                   </span>
 
@@ -68,26 +67,27 @@
               </td>
               <td class="row_buttons">
                 <div class="tools" >
+                  <div class="pull-right" ng-init = "tools = tools_processor(object)" >
 
-                  <span ng-repeat="tool in tools">
+                    <span ng-repeat="tool in tools">
 
-                    <a href="{{ tool.url(object) }}" class="pointer tool" ng-if="tool.url !== undefined">
-                      <span translate>{{ tool.text }}</span>
-                      <i class="{{ tool.icon }} "> </i>
-                    </a>
+                      <a href="{{ tool.url }}" class="pointer tool" ng-if="tool.url !== undefined">
+                        <span translate>{{ tool.text }}</span>
+                        <i class="{{ tool.icon }} "> </i>
+                      </a>
 
-                    <span ng-click="tool.callback(object)" class="pointer tool" ng-if="tool.callback !== undefined">
-                      <span translate>{{ tool.text }}</span>
-                      <i class="{{ tool.icon }}"></i>
+                      <span ng-click="tool.callback(object)" class="pointer tool" ng-if="tool.callback !== undefined">
+                        <span translate>{{ tool.text }}</span>
+                        <i class="{{ tool.icon }}"></i>
+                      </span>
                     </span>
-                  </span>
 
-                  <span ng-if="tool.toggle-details !== undefined" ng-click="toggle_details(object)" class="pointer tool" >
-                    <span translate>View</span>
-                    <i class="{{ handle_icon }} {{ handle_icon_expand(object) }} handle fa"></i>
-                  </span>
-                </div>
+                    <span ng-if="tool.toggle-details !== undefined" ng-click="toggle_details(object)" class="pointer tool" >
+                      <span translate>View</span>
+                      <i class="{{ handle_icon }} {{ handle_icon_expand(object) }} handle fa"></i>
+                    </span>
 
+                  </div>
               </td>
 
             </tr>
@@ -111,51 +111,51 @@
             </tr>
           </tbody>
         </table>
-      </div><!-- /.box-body -->
+                </div><!-- /.box-body -->
 
-      <!-- Box fotter -->
-      <div class="box-footer clearfix">
-        <span ng-if="has_pagination()">
-          <ul class="pagination pagination-sm no-margin pull-left">
-            <li><a  ng-click="go_to_first_page()">
-              <i class="fa {{ first_page_icon }}"></i>
-            </a></li>
+                <!-- Box fotter -->
+                <div class="box-footer clearfix">
+                  <span ng-if="has_pagination()">
+                    <ul class="pagination pagination-sm no-margin pull-left">
+                      <li><a  ng-click="go_to_first_page()">
+                        <i class="fa {{ first_page_icon }}"></i>
+                      </a></li>
 
-            <li><a ng-click="go_to_prev_page()">
-              <i class="fa {{ prev_page_icon }}" ></i>
-            </a></li>
+                      <li><a ng-click="go_to_prev_page()">
+                        <i class="fa {{ prev_page_icon }}" ></i>
+                      </a></li>
 
 
-            <li><a ng-click="go_to_next_page()">
-              <i class="fa {{ next_page_icon }}"></i>
-            </a></li>
-            <li><a ng-click="go_to_last_page()">
-              <i class="fa {{ last_page_icon }}"></i>
-            </a></li>
-          </ul>
+                      <li><a ng-click="go_to_next_page()">
+                        <i class="fa {{ next_page_icon }}"></i>
+                      </a></li>
+                      <li><a ng-click="go_to_last_page()">
+                        <i class="fa {{ last_page_icon }}"></i>
+                      </a></li>
+                    </ul>
 
-          <div class="input-group input-group-sm pagination_page pull-left">
-            <input type="text" class="pagination_input form-control" ng-model="targetpage" ng-keypress="go_to_page($event, targetpage)" tabindex="3" value="{{current_page()}}" novalidate>
-            <span class="input-group-btn">
-              <button class="btn btn-info btn-flat" ng-click="go_to_page($event, targetpage)" type="button" translate>Go!</button>
-            </span>
-          </div>
-        </span>
-        <span class="footer-info">
-          <span class="badge bg-red" title="{{ 'Current Page' | translate }}"><i class="fa fa-file-o"></i> {{ current_page() }}</span>
-          <span class="badge bg-yellow" title="{{ 'Total Pages' | translate}}"><i class="fa fa-files-o"></i> {{ total_pages() }}</span>
-          <span class="badge bg-green" title="{{ 'Item(s)' | translate }}"><i class="fa fa-list-ul"></i> {{ objects_count() }}</span>
-          <span class="badge bg-blue" title="{{ 'Selected' | translate }}"><i class="fa {{ hand_icon }}"></i> {{ selected_count() }}</span>
-        </span>
+                    <div class="input-group input-group-sm pagination_page pull-left">
+                      <input type="text" class="pagination_input form-control" ng-model="targetpage" ng-keypress="go_to_page($event, targetpage)" tabindex="3" value="{{current_page()}}" novalidate>
+                      <span class="input-group-btn">
+                        <button class="btn btn-info btn-flat" ng-click="go_to_page($event, targetpage)" type="button" translate>Go!</button>
+                      </span>
+                    </div>
+                  </span>
+                  <span class="footer-info">
+                    <span class="badge bg-red" title="{{ 'Current Page' | translate }}"><i class="fa fa-file-o"></i> {{ current_page() }}</span>
+                    <span class="badge bg-yellow" title="{{ 'Total Pages' | translate}}"><i class="fa fa-files-o"></i> {{ total_pages() }}</span>
+                    <span class="badge bg-green" title="{{ 'Item(s)' | translate }}"><i class="fa fa-list-ul"></i> {{ objects_count() }}</span>
+                    <span class="badge bg-blue" title="{{ 'Selected' | translate }}"><i class="fa {{ hand_icon }}"></i> {{ selected_count() }}</span>
+                  </span>
 
-        <div class="pull-right">
-          <span class="btn btn-sm bg-olive" ng-click="toggle_select()" translate>Toggle Select</span>
-          <span ng-if="can('destroy', permission_model)"  ng-click="delete_items()"><span class="btn btn-sm btn-danger">{{delete_title || "Delete"}}</span></span>
+                  <div class="pull-right">
+                    <span class="btn btn-sm bg-olive" ng-click="toggle_select()" translate>Toggle Select</span>
+                    <span ng-if="can('destroy', permission_model)"  ng-click="delete_items()"><span class="btn btn-sm btn-danger">{{delete_title || "Delete"}}</span></span>
 
-        </div>
-      </div>
-      <!-- end of box footer -->
+                  </div>
+                </div>
+                <!-- end of box footer -->
 
-    </div><!-- /.box -->
+      </div><!-- /.box -->
+    </div>
   </div>
-</div>
