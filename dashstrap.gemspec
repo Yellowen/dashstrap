@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'less-rails'
   spec.add_dependency 'railties', '~>4'
-  spec.add_dependency 'faalis', '~> 1.0.0.alpha1'
+  spec.add_dependency 'faalis'
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'font-awesome-rails'
 
