@@ -1,0 +1,22 @@
+.box.box-primary
+  .box-header
+    .box-title ng-if="!editing"
+      = _('New Group')
+
+    .box-title ng-if="editing"
+      = _('Edit Group')
+
+  form[name="new_group" role="form"  novalidate]
+    .box-body
+      .form-group
+        label for="group_name"
+          = ('Group name')
+        input#group_name.form_control[placeholer="Group name" ng-model="new_name" type="text" required]
+
+    .box-footer
+      button.btn.btn-success ng-click="save()" ng-disabled="form.$invalid"
+        i.fa.fa-check
+        = _('Save')
+      button.btn.btn-error ng-click="cancel()"
+        i.fa.fa-times
+        = _('Cancel')
