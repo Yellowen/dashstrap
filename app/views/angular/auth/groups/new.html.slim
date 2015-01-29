@@ -1,22 +1,35 @@
-.box.box-primary
-  .box-header
-    .box-title ng-if="!editing"
-      = _('New Group')
+.row
+  .col-sm-12.col-lg-5
+    .box.box-primary
+      .box-header
+        .box-title ng-if="!editing"
+          = _('New Group')
 
-    .box-title ng-if="editing"
-      = _('Edit Group')
+        .box-title ng-if="editing"
+          = _('Edit Group')
 
-  form[name="new_group" role="form"  novalidate]
-    .box-body
-      .form-group
-        label for="group_name"
-          = ('Group name')
-        input#group_name.form_control[placeholer="Group name" ng-model="new_name" type="text" required]
+      form[name="new_group" role="form"  novalidate]
+        .box-body
+          .row
+            .col-sm-12
+                label for="group_name"
+                  = ('Group name')
 
-    .box-footer
-      button.btn.btn-success ng-click="save()" ng-disabled="form.$invalid"
-        i.fa.fa-check
-        = _('Save')
-      button.btn.btn-error ng-click="cancel()"
-        i.fa.fa-times
-        = _('Cancel')
+                input#group_name.form-control[placeholder==(_('Enter the name of group you want to create')) ng-model="new_name" type="text" required]
+
+        .box-footer
+          .row
+            .col-sm-12
+              button.btn.btn-primary type="submit" ng-click="save()" ng-disabled="form.$invalid"
+                span
+                  i.fa.fa-check
+                = _('Save')
+
+              button.btn.btn-danger type="submit" ng-click="cancel()"
+                i.fa.fa-times
+                = _('Cancel')
+  .col-sm-12.col-lg-7
+    .box
+      .box-header
+        .box-title
+          = _('Permissions')
