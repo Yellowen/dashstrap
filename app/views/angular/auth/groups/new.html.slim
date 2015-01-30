@@ -1,5 +1,5 @@
 .row
-  .col-sm-12.col-lg-5
+  .col-sm-12.col-lg-9
     .box.box-primary
       .box-header
         .box-title ng-if="!editing"
@@ -11,7 +11,7 @@
       form[name="new_group" role="form"  novalidate]
         .box-body
           .row
-            .col-sm-12
+            .col-sm-12.col-lg-6
                 label for="group_name"
                   = ('Group name')
 
@@ -28,8 +28,17 @@
               button.btn.btn-danger type="submit" ng-click="cancel()"
                 i.fa.fa-times
                 = _('Cancel')
-  .col-sm-12.col-lg-7
+  .col-sm-12.col-lg-3
     .box
       .box-header
         .box-title
-          = _('Permissions')
+          = _('Groups to use as template')
+.row
+  .col-sm-9
+    .box.box-warning
+      .box-header
+        .box-title
+          = _("Permissions")
+
+      .box-body
+        .row
