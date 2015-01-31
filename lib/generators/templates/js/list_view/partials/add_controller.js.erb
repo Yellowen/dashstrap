@@ -1,7 +1,11 @@
-<%= resource.pluralize %>.controller("Add<%= resource %>Controller", ["Restangular", "$scope", "$location", "$routeParams", "gettext", "catch_error", function(API, $scope, $location, $routeParams, gettext, catch_error){
+<%= resource.pluralize %>.controller("Add<%= resource %>Controller", ["$rootScope", "Restangular", "$scope", "$state", "$stateParams", "gettext", "catch_error", function($rootScope, API, $scope, $state, $stateParams, _, catch_error){
+
+    $rootScope.section_name = _("<%= resource.underscore.pluralize %>");
+    $rootScope.section_name = _("Add/Edit");
+
     <% parents.each do |parent| %>
     // ID of parent resource
-    $scope.<%= parent %>_id = $routeParams.<%= parent %>_id;
+    $scope.<%= parent %>_id = $stateParams.<%= parent %>_id;
     <% end %>
 
     $scope.select2options = {};
@@ -24,8 +28,8 @@
     <% fields.each do |name, type, to| %><% if type == "in" %>$scope.<%= name %>_choices = _.sortBy([<% to.each do |choice| %>
         {name: "<%= choice.underscore %>", title: "<%= choice.humanize %>"},<% end %>
     ], "title");<% end %><% end %>
-    if( "id" in $routeParams ){
-        $scope.obj_id = $routeParams.id;
+    if( $stateParams.id !== undefined ){
+        $scope.obj_id = $stateParams.id;
         $scope.editing = true;
         if ($scope.obj_id < 0) {
             is_copy = true;
@@ -54,7 +58,7 @@
 
     $scope.cancel = function(){
         $(".form input").val("");
-        $location.path("<% parents.each do |p| %><%= p %>/" + $scope.<%= p %>_id + "<% end %>/<%= resource_url %>");
+        $state.go("<%= resource.pluralize.underscore %>");
     };
 
     $scope.save = function(save_another){
@@ -69,12 +73,12 @@
 
             API.<% parents.each do |parent| %>one("<%= parent %>", $scope.<%= parent %>_id).<% end %>one("<%= resource.pluralize.underscore %>", $scope.obj_id).patch(<%= resource.underscore %>)
                 .then(function(){
-                    success_message(gettext("<%= resource %> updated successfully."));
+                    success_message(_("<%= resource %> updated successfully."));
                     if (save_another) {
                         $(".form input").val("");
                     }
                     else {
-                        $location.path("<% parents.each do |p| %><%= p %>/" + $scope.<%= p %>_id + "<% end %>/<%= resource_url %>");
+                        $state.go("<%= resource.pluralize.underscore %>");
                     }
                 }, function(data){
                     catch_error(data);
@@ -83,12 +87,12 @@
         }
         else {
             API.<% parents.each do |parent| %>one("<%= parent %>", $scope.<%= parent %>_id).<% end %>all("<%= resource.pluralize.underscore %>").customPOST(<%= resource.underscore %>, "").then(function(){
-                success_message(gettext("<%= resource %> created successfully."));
+                success_message(_("<%= resource %> created successfully."));
                 if (save_another) {
                     $(".form input").val("");
                 }
                 else {
-                    $location.path("<% parents.each do |p| %><%= p %>/" + $scope.<%= p %>_id + "<% end %>/<%= resource_url %>");
+                    $state.go("<%= resource.pluralize.underscore %>");
                 }
             }, function(data){
                 catch_error(data);
