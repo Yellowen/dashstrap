@@ -1,6 +1,6 @@
 // <%= resource %> index controller -------------------------------------------------------
 // This controller is responsible for list page (index)
-<%= resource.pluralize %>.controller("<%= resource %>Controller", ["$scope", "gettext", "Restangular", "catch_error", "$state", "$stateParams", function($scope, _, API, catch_error, $state, $stateParams){
+<%= resource.pluralize %>.controller("<%= resource %>Controller", ["$rootScope", "$scope", "gettext", "Restangular", "catch_error", "$state", "$stateParams", function($rootScope, $scope, _, API, catch_error, $state, $stateParams){
 
     $rootScope.section_name = _("<%= resource.underscore.pluralize %>");
     $rootScope.section_name = _("List");
