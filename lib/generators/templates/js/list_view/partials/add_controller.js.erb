@@ -1,7 +1,7 @@
 <%= resource.pluralize %>.controller("Add<%= resource %>Controller", ["$rootScope", "Restangular", "$scope", "$state", "$stateParams", "gettext", "catch_error", function($rootScope, API, $scope, $state, $stateParams, _, catch_error){
 
-    $rootScope.section_name = _("<%= resource.underscore.pluralize %>");
-    $rootScope.section_name = _("Add/Edit");
+    $rootScope.section_name = _("<%= resource.underscore.pluralize.titleize %>");
+    $rootScope.section_slug = _("Add/Edit");
 
     <% parents.each do |parent| %>
     // ID of parent resource
