@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Sameer Rahmani']
   spec.email         = ['lxsameer@gnu.org']
   spec.summary       = %q{An awesome dashboard template for Faalis platform.}
-  spec.description   = %q{An awesome dashboard template for Faalis platform.}
+  spec.description   = %q{An awesome dashboard template for Faalis platform. }
   spec.homepage      = 'https://github.com/Yellowen/dashstrap'
   spec.license       = 'GPLv2'
 
