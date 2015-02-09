@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency'gettext_i18n_rails'
 
   spec.add_dependency 'less-rails'
-  spec.add_dependency 'railties', '~>4'
+  spec.add_dependency 'railties'
   spec.add_dependency 'faalis'
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'font-awesome-rails'
