@@ -1,6 +1,7 @@
 <% unless no_filter? %>
   <filter config="filter_config" result="<%= resource.pluralize.underscore %>"></filter>
 <% end %>
+
 <% unless no_bulk? %>
   <div class="row">
     <div class="col-sm-12">

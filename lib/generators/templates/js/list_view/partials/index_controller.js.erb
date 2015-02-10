@@ -3,6 +3,7 @@
 <%= resource.pluralize %>.controller("<%= resource %>Controller", ["$rootScope", "$scope", "gettext", "Restangular", "catch_error", "$state", "$stateParams", function($rootScope, $scope, _, API, catch_error, $state, $stateParams){
 
     $rootScope.section_name = _("<%= resource.underscore.pluralize.titleize %>");
+
     $rootScope.section_slug = _("List");
 
     <% parents.each do |parent| %>
@@ -25,6 +26,7 @@
         list: <% if parent? %>API.<% parents.each do |parent| %>one("<%= parent %>", $scope.<%= parent %>_id)<% end %>.all("<%= resource.pluralize.underscore %>")<% else %>API.all("<%= resource.pluralize.underscore %>")<% end %>
     };
     $scope.<%= resource.pluralize.underscore %> = [];<% end %>
+
     <% unless no_bulk? %>// Cache object for each field name possible values
     $scope.cache = {};
 
@@ -85,6 +87,7 @@
             },
 
         },<% end %>
+            <% unless no_duplicate? %>
         {
             title: _("Duplicate"),
             icon: "fa fa-files-o",
@@ -106,6 +109,7 @@
                 }
             }
         }
+        <% end %>
 
     ];<% unless no_bulk? %>
 
