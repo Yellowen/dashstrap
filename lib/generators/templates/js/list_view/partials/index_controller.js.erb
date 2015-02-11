@@ -182,7 +182,7 @@
         API.<% parents.each do |p| %>all("<%=p %>").<% end %>all("<%= resource.pluralize.underscore %>").customDELETE(query.join(","))
             .then(function(data) {
 
-                $scope.<%= resource.pluralize.underscore %> = _.filter($scope.<%= resource.pluralize.underscore %>, function(x){
+                $scope.<%= resource.pluralize.underscore %> = $scope.<%= resource.pluralize.underscore %>.filter(function(x){
                     return !(query.indexOf(x.id) != -1);
                 });
                 success_message(data.msg);

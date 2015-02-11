@@ -155,7 +155,6 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
         };
 
         scope.delete_items = function(){
-
             var len = scope.selected_count();
             var objects_to_delete = [];
 
