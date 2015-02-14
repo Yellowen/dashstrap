@@ -78,7 +78,7 @@
                         $(".form input").val("");
                     }
                     else {
-                        $state.go("<%= resource.pluralize.underscore %>");
+                        $state.go("<%= resource.pluralize.underscore %>", {}, { reload: true });
                     }
                 }, function(data){
                     catch_error(data);
@@ -92,7 +92,7 @@
                     $(".form input").val("");
                 }
                 else {
-                    $state.go("<%= resource.pluralize.underscore %>");
+                    $state.go("<%= resource.pluralize.underscore %>", {}, { reload: true });
                 }
             }, function(data){
                 catch_error(data);
