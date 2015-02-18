@@ -2,24 +2,42 @@
   <div class="col-sm-12 col-md-8">
 
     <div class="details">
-    <% fields.each do |f, field_type| %>
-      <dl>
-      <% case field_type
-    when "belongs_to" %> <dt translate><%= f.capitalize %> :</dt> <dd clas="detail field value">{{object.<%= f %>.name}}</dd>
-      <% when "has_many" %><dl>
-        <dt translate><%= f.capitalize %> :</dt>
-        <ul>
-          <li ng-repeat="item in object.<%= f %>"> {{ item.name }}</li>
-        </ul>
-      </dl>
-    <% else %><dt translate><%= f.capitalize %> :</dt> <dd clas="detail field value">{{object.<%= f %>}}</dd>
-      <% end %></dl>
-    <% end %>
+      <% fields.each do |f, field_type| %>
+        <dl>
+          <% case field_type
+        when "belongs_to" %> <dt translate><%= f.capitalize %> :</dt> <dd clas="detail field value">{{object.<%= f %>.name}}</dd>
+          <% when "has_many" %><dl>
+            <dt translate><%= f.capitalize %> :</dt>
+            <ul>
+              <li ng-repeat="item in object.<%= f %>"> {{ item.name }}</li>
+            </ul>
+          </dl>
+          <% else %><dt translate><%= f.capitalize %> :</dt> <dd clas="detail field value">{{object.<%= f %>}}</dd>
+          <% end %></dl>
+      <% end %>
     </div>
-
 
   </div>
 
   <div class="col-sm-12 col-md-4">
+    <div class="box box-solid">
+      <div class="box-body">
+        <div class="box-group">
+          <% if resource_data["childs"]  %>
+          <% resource_data["childs"].each do |item| %>
+          <div class="panel box box-success">
+            <div class="box-header text-center">
+              <h4>
+                <a ng-href="#/<%= resource_url.singularize %>/{{ object.id }}/<%= item.pluralize %>" class="small">
+                  <%= item.titleize %>
+                </a>
+              </h4>
+            </div>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
