@@ -42,3 +42,15 @@
 
       .box-body
         .row
+          .col-xs-12
+            table.table.table-striped
+              tbody
+                tr
+                  th
+                    = _('Entity Name')
+                  th
+                    = _('Permission')
+                tr ng-repeat="perm in resource.permissions.all()"
+                  th
+                    | {{ perm }}
+                  th
