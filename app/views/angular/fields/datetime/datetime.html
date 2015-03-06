@@ -1,10 +1,10 @@
-<div>
-  <!-- TODO: Find out why disable-timepicker and timepicker does not work together -->
-  <div ng-if="timepicker">
-    <quick-datepicker disable-timepicker="true" id="{{ element_id }}" ng-model="model" class="{{cssClasses}}" ng-required="required" name="{{ field }}" placeholder="{{ 'Click to pick a date' | translate }}" />
+<div class="">
+  <div class="form-group">
+
+    <div class='input-group date' id="{{element_id}}" ng-model="model">
+      <input type='text' class="form-control" />
+      <span class="input-group-addon"><span class="fa fa-calendar"></span>
+      </span>
+    </div>
   </div>
-  <div ng-if="!timepicker">
-    <quick-datepicker  id="{{ element_id }}" ng-model="model" class="{{cssClasses}}" ng-required="required" name="{{ field }}" placeholder="{{ 'Click to pick a date' | translate }}" />
-  </div>
-  <small id="{{ msg_element_id }}"></small>
 </div>
