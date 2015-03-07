@@ -2,6 +2,9 @@ require 'faalis/extension'
 require 'jquery-ui-rails'
 require 'font-awesome-rails'
 require 'select2-rails'
+require 'momentjs-rails'
+require 'bootstrap3-datetimepicker-rails'
+
 
 module Dashstrap
   class TemplateEngine < ::Rails::Engine
