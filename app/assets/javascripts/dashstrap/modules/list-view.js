@@ -41,6 +41,8 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
         var _item_per_page = parseInt(scope.item_per_page, 10) || 10;
         var _current_page = 1;
 
+        console.log("<<<<<<<<");
+        console.log(scope.tools_processor);
         scope.list_view = true;
         scope.grid_view = false;
 
@@ -110,10 +112,12 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
             headerRowHeight: 30,
             rowHeight: 30,
             enablePaging: true,
+
             afterSelectionChange: function(rowitem, event){
                 console.dir(rowitem);
                 console.dir(event);
             },
+
             columnDefs: scope.column_defs
         };
         var delete_method = scope.on_delete || function(x){
@@ -361,7 +365,7 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
             list_title: '=listTitle',
 
             // Tools array to use/show for each row
-            tools_processor: '=toolsProcessor',
+            tools: '=tools',
 
             // Custom delete title method
             delete_title: "=deleteTitle",
