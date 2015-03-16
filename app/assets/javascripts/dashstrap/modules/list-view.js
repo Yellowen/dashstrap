@@ -41,8 +41,6 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
         var _item_per_page = parseInt(scope.item_per_page, 10) || 10;
         var _current_page = 1;
 
-        console.log("<<<<<<<<");
-        console.log(scope.tools_processor);
         scope.list_view = true;
         scope.grid_view = false;
 
