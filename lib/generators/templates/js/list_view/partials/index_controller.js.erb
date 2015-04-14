@@ -18,6 +18,7 @@
             url: function(object) {
                 return "#" + <% parents.each do |p| %>"/<%= p %>/" + $scope.<%= p %>_id + <% end %>"/<%= resource_url %>/" + object.id + "/edit";
             },
+            text: _("Edit"),
             icon: 'fa fa-edit'
         }
     ];
