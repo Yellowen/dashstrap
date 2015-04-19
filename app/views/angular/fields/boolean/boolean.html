@@ -1,4 +1,7 @@
-<div class="boolean-field">
-  <input id="{{ element_id }}" ng-model="model" name="{{ field }}" ng-required="required" type="checkbox" class="{{cssClasses}}" /> <span class="field-label">{{ label | translate }}</span>
+<div class="boolean-field checkbox">
+  <label>
+  <input id="{{ element_id }}" ng-model="model" name="{{ field }}" ng-required="required" type="checkbox" class="checkbox {{cssClasses}}" />
+  {{ label | translate }}
+  </label>
   <small id="{{ msg_element_id }}"></small>
 </div>
