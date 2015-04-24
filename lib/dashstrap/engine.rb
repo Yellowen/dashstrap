@@ -11,6 +11,13 @@ module Dashstrap
 
     include Faalis::Extension::Base
 
+    initializer 'dashboard.add_assets_for_precompile' do |app|
+      Rails.application.config.assets.precompile += ['fontawesome-webfont.eot',
+                                                     'fontawesome-webfont.woff',
+                                                     'fontawesome-webfont.ttf',
+                                                     'fontawesome-webfont.svg']
+    end
+
     def self.register_extension(name, klass)
       Faalis::Extension.extensions[name] = klass
     end
@@ -21,10 +28,7 @@ module Dashstrap
       end
     end
 
-
     register_extension 'dashstrap', self
-
-
     override_generator_templates File.expand_path('../../generators/templates', __FILE__)
   end
 end
