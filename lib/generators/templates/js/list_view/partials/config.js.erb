@@ -1,11 +1,11 @@
 // <%= resource.pluralize %> configuration section ---------------------------
-<%= resource.pluralize %>.config(["$stateProvider", function($stateProvider){
+<%= resource.pluralize %>.config(["$stateProvider", "ResourcesProvider", function($stateProvider, ResourcesProvider){
     // Add any route you need here
     $stateProvider.
         state("<%= resource.pluralize.underscore %>", {
             url: "<% parents.each do |parent| %>/<%= parent %>/:<%= parent %>_id<% end %>/<%= resource_url %>",
             templateUrl: template_url("<%= resource_path %>/index"),
-            controller: "<%= resource %>Controller"
+            controller: "Faalis.GenericIndexController"
         }).
         state("<%= resource.pluralize.underscore %>.new",{
             url: "/new",
@@ -17,4 +17,8 @@
             templateUrl: template("<%= resource_path %>/new"),
             controller: "Add<%= resource %>Controller"
         });
+
+    <%= resource.underscore %> = new Faalis.<%= resource.classify %>Resource()
+    ResourcesProvider.resources = [<%= resource.underscore %>]
+
 }]);
