@@ -34,7 +34,7 @@
         .box-title
           = _('Groups to use as template')
 .row
-  .col-sm-9
+  .col-sm-12.col-lg-6
     .box.box-warning
       .box-header
         .box-title
@@ -46,11 +46,15 @@
             table.table.table-striped
               tbody
                 tr
-                  th
+                  th.col-md-4
                     = _('Entity Name')
-                  th
+                  th.col-md-8
                     = _('Permission')
-                tr ng-repeat="perm in resource.permissions.all()"
-                  th
-                    | {{ perm }}
-                  th
+
+                tr ng-repeat="(model, perm) in permissions"
+                  td.col-md-4
+                    | {{ model.readable() }}
+                  td.col-md-8
+                    form.form-inline
+                        span.col-sm-3 ng-repeat="action in  perm"
+                          boolean-field field-name="action.humanize()" model="selected_permissions[model][action]" label="{{ action.humanize() | translate }}"
