@@ -29,12 +29,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'font-awesome-rails'
   spec.add_dependency 'slim-rails'
-
   spec.add_dependency 'jquery-ui-rails'
   #spec.add_dependency 'rails-assets-angular-ui-bootstrap'
 
   spec.add_dependency 'select2-rails'
-
 
   spec.add_dependency 'momentjs-rails', '>= 2.8.1'
   spec.add_dependency 'bootstrap3-datetimepicker-rails', '~> 4.7'
