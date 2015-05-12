@@ -1,3 +1,5 @@
+require 'slim-rails'
+
 module Dashstrap
 end
 
