@@ -4,7 +4,7 @@ var Modules = angular.module("Modules", ["ngRoute", "ngAnimate"]);
 add_dependency("Modules");
 
 // This controller is responsible to parse modules and load them
-Modules.controller("ModulesController", ["$location", "$scope", "$controller", "UserPermissions", function($location, $scope, $controller, User){
+Modules.controller("ModulesController", ["$location", "$scope", "$controller", "UserPermissions", "gettext", function($location, $scope, $controller, User, gettext){
 
     var that = this;
     this.modules = _.filter(DModules, function(module){
@@ -17,7 +17,7 @@ Modules.controller("ModulesController", ["$location", "$scope", "$controller", "
             // ```javascript
             ///    <modulename>MenuController
             ///```
-            var menu_items = $controller(camelCase(module.resource) + "MenuController", {$scope: $scope}).menu_items;
+            var menu_items = $controller(camelCase(module.resource) + "MenuController", {$scope: $scope, gettext: gettext}).menu_items;
             module.menu_items = [];
 
             // Iterate over submenu items

@@ -294,7 +294,6 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
         scope.get_current_page = function(){
             var start = (scope.current_page() * _item_per_page) - _item_per_page;
             var end = (scope.current_page() * _item_per_page);
-
             return filtered_objects().slice(start, end);
         };
 
@@ -319,6 +318,12 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
                 return User.can(perm, model);
             }
             return true;
+        };
+
+        scope.call_func = function(func, args){
+            var star_args = Array.prototype.slice.call (arguments, func.length);
+            console.log(star_args);
+            func.apply(func, star_args);
         };
     }
 
@@ -369,7 +374,10 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
             delete_title: "=deleteTitle",
 
             //Badge operation function
-            badge_processor: '=badgeProcessor'
+            badge_processor: '=badgeProcessor',
+
+            //Tools operation function
+            tools_processor: '=toolsProcessor'
 
         },
         link: link
