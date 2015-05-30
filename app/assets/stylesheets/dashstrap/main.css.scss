@@ -66,3 +66,20 @@ $tools_link_color: #3f3f3f;
 .checkbox {
    padding-left: 20px;
 }
+
+#loading-bar {
+   .bar {
+      background-color: #00c0ef !important;
+   }
+
+   .peg {
+      -moz-box-shadow: #00c0ef 1px 0 6px 1px !important;
+      -ms-box-shadow: #00c0ef 1px 0 6px 1px !important;
+      -webkit-box-shadow: #00c0ef 1px 0 6px 1px !important;
+      box-shadow: #00c0ef 1px 0 6px 1px !important;
+   }
+}
+
+#loading-bar-spinner {
+   display: none !important;
+}
