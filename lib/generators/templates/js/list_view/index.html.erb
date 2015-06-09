@@ -85,6 +85,6 @@
 
 
 <div ui-view>
-  <list-view buttons="buttons" tools="tools" model="'<% if model_specified? %><%= model %><% else %><%= resource %><% end %>'" objects="<%= resource.pluralize.underscore %>" title-attribute="'<%= resource_data["title-field"] || 'name' %>'" details-template="details_template" item-per-page="10" on_delete="on_delete" column_defs="columns" list-title="list_title">
+  <list-view buttons="buttons" tools_processor="tools" model="'<% if model_specified? %><%= model %><% else %><%= resource %><% end %>'" objects="<%= resource.pluralize.underscore %>" title-attribute="'<%= resource_data["title-field"] || 'name' %>'" details-template="details_template" item-per-page="10" on_delete="on_delete" column_defs="columns" list-title="list_title">
   </list-view>
 </div>
