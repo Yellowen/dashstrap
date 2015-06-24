@@ -16,7 +16,6 @@
           <button data-ng-repeat="button in buttons" class="{{ button.classes }} pull-right btn" type="button" if-user="has_permission(button)"><a  object-action object="button"><i class="{{ button.icon }}"></i> {{ button.title | translate }}</a></button>
         </div>
 
-
         <div class="box-tools">
 
           <div class="input-group pull-right input-group-sm search-group col-sm-2"  ng-if="search !== true">
@@ -54,7 +53,7 @@
               </td>
 
               <td>
-                <div class="pull-left" ng-init = "badges = badge_processor(object)" >
+                <div class="pull-left" ng-init = "badges = badge_processor(object);tools = tools_processor(object)" >
                   <span ng-repeat="badge in badges" class="badge {{badge.color}}"  title="{{badge.text}}">
                     <i ng-show="badge.icon !== undefined" class="{{badge.icon}}"></i>{{badge.text}}
                   </span>
@@ -64,15 +63,13 @@
               <td class="row_buttons">
                 <div class="tools" >
                   <div class="pull-right">
-
                     <span ng-repeat="tool in tools">
-
-                      <a href="{{ tool.url(object) }}" class="pointer tool" ng-if="tool.url !== undefined">
+                      <a href="{{ tool.url }}" class="pointer tool" ng-if="tool.url != undefined">
                         <i class="{{ tool.icon }} "> </i>
                         <span translate>{{ tool.text }}</span>
                       </a>
 
-                      <span ng-click="tool.callback(object)" class="pointer tool" ng-if="tool.callback !== undefined">
+                      <span ng-click="call_func(tool.callback, object)" class="pointer tool" ng-if="tool.callback != undefined">
                         <span translate>{{ tool.text }}</span>
                         <i class="{{ tool.icon }}"></i>
                       </span>

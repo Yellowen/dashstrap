@@ -13,15 +13,19 @@
 
     $scope.list_title = '<%= resource %>';
 
-    $scope.tools = [
-        {
-            url: function(object) {
+    $scope.tools = function(obj)
+    {
+        items = [
+            {
+                url: function(object) {
                 return "#" + <% parents.each do |p| %>"/<%= p %>/" + $scope.<%= p %>_id + <% end %>"/<%= resource_url %>/" + object.id + "/edit";
             },
             text: _("Edit"),
             icon: 'fa fa-edit'
-        }
-    ];
+            }
+        ];
+        return items;
+    };
 
     <% unless no_filter? %>$scope.filter_config = {
         list: <% if parent? %>API.<% parents.each do |parent| %>one("<%= parent %>", $scope.<%= parent %>_id)<% end %>.all("<%= resource.pluralize.underscore %>")<% else %>API.all("<%= resource.pluralize.underscore %>")<% end %>
