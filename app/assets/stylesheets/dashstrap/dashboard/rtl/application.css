@@ -11,3 +11,7 @@ bootstrap3-wysihtml5
 */
 //= require rtl/AdminLTE
 //= require dashstrap/dashboard/share
+//= require_self
+.fa {
+   padding-left: 0.4em;
+}

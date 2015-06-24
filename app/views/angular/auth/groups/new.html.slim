@@ -58,3 +58,15 @@
                     form.form-inline
                         span.col-sm-3 ng-repeat="action in  perm"
                           boolean-field field-name="action.humanize()" model="selected_permissions[model][action]" label="{{ action.humanize() | translate }}"
+
+.row
+  .col-sm-2
+    button.btn.btn-primary.btn-block type="submit" ng-click="save()" ng-disabled="form.$invalid"
+      i.fa.fa-check
+      = _('Save')
+
+  .col-sm-2
+
+    button.btn.btn-danger.btn-block type="submit" ng-click="cancel()"
+      i.fa.fa-times
+      = _('Cancel')
