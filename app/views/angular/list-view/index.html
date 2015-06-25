@@ -45,7 +45,10 @@
               </td>
 
               <td>
-                {{ get_attr(object, title_attr) }}
+                <a href="{{ resource.edit_link(object) }}" ng-if="resource != undefined">
+                   {{ get_attr(object, title_attr) }}
+                </a>
+                <span ng-if="resource == undefined">{{ get_attr(object, title_attr) }}</span>
               </td>
 
               <td>
@@ -61,6 +64,11 @@
                   <div class="pull-right">
                     <span ng-repeat="tool in tools">
                       <a href="{{ tool.url }}" class="pointer tool" ng-if="tool.url != undefined">
+                        <i class="{{ tool.icon }} "> </i>
+                        <span translate>{{ tool.text }}</span>
+                      </a>
+
+                      <a href="{{ tool.url_provider(object) }}" class="pointer tool" ng-if="tool.url_provider != undefined">
                         <i class="{{ tool.icon }} "> </i>
                         <span translate>{{ tool.text }}</span>
                       </a>
