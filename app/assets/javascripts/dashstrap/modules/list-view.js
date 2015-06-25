@@ -171,7 +171,7 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
 
                 }
 
-                delete_method(objects_to_delete);
+                delete_method(objects_to_delete, scope.resource, scope);
             }
 
 
@@ -377,7 +377,9 @@ ListView.directive('listView', ["$filter", "gettext", "UserPermissions", functio
             badge_processor: '=badgeProcessor',
 
             //Tools operation function
-            tools_processor: '=toolsProcessor'
+            tools_processor: '=toolsProcessor',
+
+            resource: '='
 
         },
         link: link
