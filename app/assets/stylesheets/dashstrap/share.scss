@@ -10,8 +10,26 @@
 
 .box {
      .box-header {
-        a{
-           color: white;
+        a.btn-success{
+           
+              color: white;
+           
+        
         }
      } 
+
+     .box-body{
+        i.fa-remove:before{
+           color:red;
+           padding-left: 1em
+
+        }
+        i.fa-remove:hover{
+           color:rgb(100, 108, 108)
+        }
+
+        i.fa-edit{
+           padding-top: 0.27em
+        }
+     }
 }
