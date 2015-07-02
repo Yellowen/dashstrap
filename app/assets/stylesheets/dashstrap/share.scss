@@ -11,17 +11,17 @@
 .box {
      .box-header {
         a.btn-success{
-           
+
               color: white;
-           
-        
+
+
         }
-     } 
+     }
 
      .box-body{
         i.fa-remove:before{
-           color:red;
-           padding-left: 1em
+           color:rgb(231, 9, 9);
+           padding-left: 0.8em
 
         }
         i.fa-remove:hover{
@@ -31,5 +31,7 @@
         i.fa-edit{
            padding-top: 0.27em
         }
+        .fa-key:before{
+          padding-right: 0.8em        }
      }
 }
