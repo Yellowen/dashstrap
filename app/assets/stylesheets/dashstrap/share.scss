@@ -19,19 +19,24 @@
      }
 
      .box-body{
-        i.fa-remove:before{
-           color:rgb(231, 9, 9);
-           padding-left: 0.8em
+        .btn-user{
 
-        }
-        i.fa-remove:hover{
-           color:rgb(100, 108, 108)
+          i.fa-remove:before{
+           color: rgb(231, 9, 9);
+           }
+
+          i.fa-remove:hover{
+           color: rgb(100, 108, 108)
+          }
+
+          i.fa-key:before{
+            color: #00A65A
+          }
+
+          a{
+            padding-right: 1em
+          }
         }
 
-        i.fa-edit{
-           padding-top: 0.27em
-        }
-        .fa-key:before{
-          padding-right: 0.8em        }
-     }
+      }
 }
