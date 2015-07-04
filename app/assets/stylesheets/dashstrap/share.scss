@@ -1,3 +1,4 @@
+@import "variables";
 .sidebar .sidebar-menu .treeview-menu {
    display: block;
 
@@ -11,30 +12,32 @@
 .box {
      .box-header {
         a.btn-success{
-
               color: white;
-
-
         }
      }
 
      .box-body{
         .btn-user{
 
-          i.fa-remove:before{
-           color: rgb(231, 9, 9);
+          i.btn-remove{
+             color: $red-rb;
            }
 
-          i.fa-remove:hover{
-           color: rgb(100, 108, 108)
+          i.btn-remove:hover{
+             color: $red-rb-light;
           }
 
-          i.fa-key:before{
-            color: #00A65A
+          i.change-pass{
+            color: $green;
+
+          }
+          i.change-pass:hover{
+            color: $green-light;
+
           }
 
           a{
-            padding-right: 1em
+            padding-right: 1em;
           }
         }
 
