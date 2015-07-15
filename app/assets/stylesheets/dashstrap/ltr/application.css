@@ -1,4 +1,3 @@
-//= require variables
 //= require bootstrap
 //= require font-awesome
 /*
@@ -14,7 +13,6 @@ bootstrap3-wysihtml5
 //= require dashstrap/share
 //= require dashstrap/main
 //= require dashstrap/ltr/ltr
-//= require select2/select2
-//= require select2/select2-bootstrap
+//= require select2
+//= require select2-bootstrap
 //= require bootstrap-datetimepicker
-//= require angular-loading-bar/loading-bar
