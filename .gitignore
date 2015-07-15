@@ -18,3 +18,4 @@ tmp
 **/*/.sass*
 node_modules/
 *~
+**/*/.tern*
