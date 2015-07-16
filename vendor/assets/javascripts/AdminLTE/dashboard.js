@@ -27,8 +27,8 @@ $(function() {
     ;
 
     //bootstrap WYSIHTML5 - text editor
-    //$(".textarea").wysihtml5();
-    /*
+    $(".textarea").wysihtml5();
+
     $('.daterange').daterangepicker(
             {
                 ranges: {
@@ -45,10 +45,9 @@ $(function() {
     function(start, end) {
         alert("You chose: " + start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
     });
-     */
 
     /* jQueryKnob */
-    //$(".knob").knob();
+    $(".knob").knob();
 
     //jvectormap data
     var visitorsData = {
@@ -65,7 +64,7 @@ $(function() {
         "RU": 3000 //Russia
     };
     //World map by jvectormap
-    /*$('#world-map').vectorMap({
+    $('#world-map').vectorMap({
         map: 'world_mill_en',
         backgroundColor: "transparent",
         regionStyle: {
@@ -88,10 +87,10 @@ $(function() {
             if (typeof visitorsData[code] != "undefined")
                 el.html(el.html() + ': ' + visitorsData[code] + ' new visitors');
         }
-    });*/
+    });
 
     //Sparkline charts
-    /*var myvalues = [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021];
+    var myvalues = [1000, 1200, 920, 927, 931, 1027, 819, 930, 1021];
     $('#sparkline-1').sparkline(myvalues, {
         type: 'line',
         lineColor: '#92c1dc',
@@ -114,7 +113,7 @@ $(function() {
         fillColor: "#ebf4f9",
         height: '50',
         width: '80'
-    });*/
+    });    
 
     //The Calender
     $("#calendar").datepicker();
@@ -126,7 +125,7 @@ $(function() {
 
     /* Morris.js Charts */
     // Sales chart
-    /*var area = new Morris.Area({
+    var area = new Morris.Area({
         element: 'revenue-chart',
         resize: true,
         data: [
@@ -208,13 +207,12 @@ $(function() {
         labels: ['CPU', 'DISK'],
         hideHover: 'auto'
     });
-
     //Fix for charts under tabs
     $('.box ul.nav a').on('shown.bs.tab', function(e) {
         area.redraw();
         donut.redraw();
     });
-     */
+
 
     /* BOX REFRESH PLUGIN EXAMPLE (usage with morris charts) */
     $("#loading-example").boxRefresh({

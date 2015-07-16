@@ -29,32 +29,30 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" >
       <li class="active">
-        <a href="/<%= Faalis::Engine.dashboard_namespace.to_s %>/" data-remote="true">
+        <a href="/<%= Faalis::Engine.dashboard_namespace.to_s %>/">
           <i class="fa fa-dashboard"></i><%= _('Dashboard') %></span>
         </a>
       </li>
-      <% cache @sidebar do  %>
-        <% @sidebar.menu_entries.each do |menu| %>
-          <li class="treeview point">
-            <a href="#">
-              <i class="<%= menu.icon %>"></i> <span><%= menu.title %></span>
-              <i class="fa fa-angle-left pull-right"></i>
-            </a>
+      <% @sidebar.menu_entries.each do |menu| %>
+        <li class="treeview point">
+          <a href="#">
+            <i class="<%= menu.icon %>"></i> <span><%= menu.title %></span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
 
-            <% unless menu.children.nil? %>
-              <ul class="treeview-menu slide">
-                <% menu.children.each do |submenu| %>
-                  <li>
-                    <a href="<%= submenu.url %>">
-                      <i class="<%= submenu.icon %>"></i>
-                      <span><%= submenu.title %></span>
-                    </a>
-                  </li>
-                <% end %>
-              </ul>
-            <% end %>
-          </li>
-        <% end %>
+          <% unless menu.children.nil? %>
+            <ul class="treeview-menu slide">
+              <% menu.children.each do |submenu| %>
+                <li>
+                  <a href="<%= submenu.url %>">
+                    <i class="<%= submenu.icon %>"></i>
+                    <span><%= submenu.title %></span>
+                  </a>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </section>
