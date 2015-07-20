@@ -4,3 +4,6 @@
 //= require bootstrap-datetimepicker
 //= require bootstrap-datepicker
 //= require rtl/bootstrap-datepicker.fa
+//= require bootstrap-daterangepicker
+//= require jquery-knob
+//= require jquery-sparkline

@@ -30,7 +30,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'font-awesome-rails'
   spec.add_dependency 'slim-rails'
   spec.add_dependency 'jquery-ui-rails'
-
+  spec.add_dependency 'rails-assets-jquery-knob'
+  spec.add_dependency 'rails-assets-bootstrap-daterangepicker'
+  spec.add_dependency 'rails-assets-jquery-sparkline'
   #spec.add_dependency 'rails-assets-angular-ui-bootstrap'
 
   spec.add_dependency 'select2-rails'
