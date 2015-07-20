@@ -2,5 +2,5 @@
 //= require moment
 //= require moment/fa
 //= require bootstrap-datetimepicker
-//= require dashstrap/rtl/bootstrap-datepicker
-//= require dashstrap/rtl/bootstrap-datepicker.fa
+//= require bootstrap-datepicker
+//= require rtl/bootstrap-datepicker.fa
