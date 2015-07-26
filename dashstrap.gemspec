@@ -18,14 +18,10 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.5'
   spec.add_development_dependency 'rake'
-  #spec.add_development_dependency '"fast_gettext"'
-  spec.add_development_dependency 'gettext'
-  spec.add_development_dependency 'ruby_parser'
-  spec.add_development_dependency'gettext_i18n_rails'
 
   spec.add_dependency 'less-rails'
   spec.add_dependency 'railties'
-  spec.add_dependency 'faalis'
+
   spec.add_dependency 'jquery-rails'
   spec.add_dependency 'font-awesome-rails'
   spec.add_dependency 'slim-rails'
